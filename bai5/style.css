@@ -1,0 +1,17 @@
+/*sử dụng file có đuôi là .css để thêm css cho html*/
+/*sau đó nhúng vào html thông qua thẻ link*/
+
+/*bộ chọn (selector) thông qua tên thẻ*/
+p {
+    color: red;
+}
+/*bộ chọn (selector) thông qua id*/
+/*chỉ định id thông qua dấu thăng (#) */
+#demo {
+    color: green;
+}
+/*bộ chọn (selector) thông qua class*/
+/*chỉ định claa thông qua dấu chấm (.) */
+.hello {
+    color: blue;
+}
