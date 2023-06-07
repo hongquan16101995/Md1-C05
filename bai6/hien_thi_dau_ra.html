@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--4 cách hiển thị trên trang HTML thông qua Javascript-->
+<!--C1: sử dụng hàm alert()-->
+<button onclick="m1()">Click me 1</button>
+<!--C2: sử dụng document.getElementById()-->
+<p id="result"></p>
+<button onclick="m2()">Click me 2</button>
+<!--C3: sử dụng console.log-->
+<button onclick="m3()">Click me 3</button>
+<!--C4: sử dụng document.write()-->
+<button onclick="m4()">Click me 4</button>
+
+<input type="text">
+</body>
+<script>
+  // function: là từ khóa khai báo 1 hàm trong javascript
+  // m1: tên hàm mà do ng viết code đặt
+  function m1() {
+    // alert(): là 1 hàm có sẵn trong javascript, cho phép hiển thị thông báo dạng hộp thoại
+    alert("Hello")
+  }
+
+  function m2() {
+    // document: là thành phần của Javascript, hỗ trợ chỉ định đến màn hình hiện tại đang thao tác
+    // getElementById(): là phương thức của thành phần document, cho phép gọi đến thành phần có id tương ứng
+    // trên màn hình hiện tại
+    // innerHTML: là thuộc tính cho phép in ra giá trị tại id được chỉ định trước đó
+
+    // yêu cầu: tìm hiểu sự khác nhau giữa innerText và innerHTML???
+    document.getElementById("result").innerHTML = "Hello"
+  }
+
+  function m3() {
+    // console: là thành phần của trang HTML trên trình duyệt, cho phép hiển thị kết quả tương ứng
+    // cách mở màn hình console: f12 hoặc chuột phải => kiểm tra / inspec
+    console.log("Hello")
+  }
+
+  function m4() {
+    // write(): là phương thức của document, cho phép tạo mới phần body của HTML với dữ liệu được cho
+    document.write("<h1>Hello</h1>")
+  }
+
+  //tìm hiểu có bao nhiều cách để truyền dữ liệu từ HTML vào Javascript??
+  //demo code
+</script>
+</html>

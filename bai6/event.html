@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--sự kiện trong trang HTML: là các hành động, hoạt động trong trang HTML-->
+<!--đồng thời có thể bắt được các sự kiện đó thông qua các thuộc tính HTML-->
+<!--dùng sự kiện làm điều kiện để gọi đến các thành phần Js mong muốn-->
+
+<input type="text" onchange="demo()" value="">
+<!--onchange: là sự kiện xảy ra khi có sự thay đổi của thành phần HTML-->
+
+<p style="width: 100px" id="title" onmouseover="demo1()">HelloWorld</p>
+<!--onmouseover: là sự kiện xảy ra khi con trỏ chuột di chuyển qua thành phần HTML-->
+
+<p style="width: 100px" onmouseout="demo2()">Bye World</p>
+<!--onmouseout: là sự kiện xảy ra khi con trỏ chuột rời khỏi thành phần HTML-->
+
+<button onclick="demo3()">Hello</button>
+<!--onclick: là sự kiện xảy ra khi con trỏ chuột click vào thành phần HTML-->
+</body>
+<script>
+    function demo() {
+        alert("Hello")
+    }
+
+    function demo1() {
+        alert("HelloWorld")
+    }
+
+    function demo2() {
+        alert("Bye World")
+    }
+
+    function demo3() {
+        document.getElementById("title").style.color = "red"
+    }
+</script>
+</html>
