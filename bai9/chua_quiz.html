@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let x = 5;
+    let b1 = true;
+    let b2 = false;
+
+    if ((x == 4) && !b2)  // => điều kiện sai
+        console.log("1 ");
+    console.log("2 ");
+
+    if ((b2 == true) && b1)  // => điều kiện sai
+        console.log("3 ");
+
+    // auto convert
+    // 0, "", undefined, null, false
+    if (0) {
+        alert("hello")
+    } else {
+        alert("bye")
+    }
+
+
+    let x = 0;
+    let y = 4;
+    let z = 5;
+    if (x > 2) {
+        if (y < 5) {
+            console.log("message one");
+        } else {
+            console.log("message two");
+        }
+    } else if (z > 5) {
+        console.log("message three");
+    } else {
+        console.log("message four");
+    }
+</script>
+</html>

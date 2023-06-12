@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Số tiền gửi</td>
+        <td><input type="text" id="money"></td>
+    </tr>
+    <tr>
+        <td>Số tháng gửi</td>
+        <td><input type="text" id="month"></td>
+    </tr>
+    <tr>
+        <td>Lãi suất</td>
+        <td><input type="text" id="lai_suat"></td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="tinhTien()">Tính toán</button>
+        </td>
+        <td></td>
+    </tr>
+</table>
+<h2 id="result"></h2>
+</body>
+<script>
+    function tinhTien() {
+        let money = +document.getElementById("money").value
+        let month = +document.getElementById("month").value
+        let laiSuat = +document.getElementById("lai_suat").value
+        if (money < 0) {
+            alert("Nhập số tiền sai, nhập lai!")
+        } else if (month < 0 || month > 36) {
+            alert("Nhập số tháng chưa phù hợp, nhập lại!")
+        } else {
+            let result = (((money * laiSuat) / 100) * month) + money
+            document.getElementById("result").innerHTML = "Số tiền nhận được là: " + result
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--sự kiện onload: sự kiên xảy ra khi trang HTML này được tải lên trình duyệt-->
+<!--khi đó hàm init() sẽ được thực thi-->
+<body onload="init()">
+<img id="title" style="position: absolute; left: 100px; top: 100px"
+     src="../image/food2.jpg" height="200" width="200"/>
+<button onclick="moveRight()">MoveRight</button>
+<button onclick="moveLeft()">MoveLeft</button>
+<button onclick="moveTop()">MoveTop</button>
+<button onclick="moveBottom()">MoveBottom</button>
+<button onclick="move()">Move</button>
+</body>
+<script>
+    function moveRight() {
+        let img = document.getElementById("title")
+        // + : chuyển về dạng kiểu dữ liệu number
+        // parseInt(), parseFloat(): giúp chuyển chuỗi về định dạng số theo kiểu dữ liệu tương ứng
+        // int: số nguyên
+        // float: sô thập phân
+        // img.style.left: trả về chỉ số biên trái, kèm theo px => parseInt() để loại bỏ px và lấy chỉ số
+        img.style.left = parseInt(img.style.left) + 5 + "px"
+        console.log(img.style.left)
+    }
+
+    function moveLeft() {
+        // dòng tiếp theo để lấy phần tử img về Js từ HTML
+        let img = document.getElementById("title")
+        // dòng tiếp theo để lấy giá trị của thuộc tính left từ CSS
+        img.style.left = parseInt(img.style.left) - 5 + "px"
+        console.log(img.style.left)
+    }
+
+    function moveTop() {
+        let img = document.getElementById("title")
+        img.style.top = parseInt(img.style.top) - 5 + "px"
+        console.log(img.style.top)
+    }
+
+    function moveBottom() {
+        let img = document.getElementById("title")
+        img.style.top = parseInt(img.style.top) + 5 + "px"
+        console.log(img.style.top)
+    }
+
+    function move() {
+        let img = document.getElementById("title")
+        img.style.left = parseInt(img.style.top) + 5 + "px"
+        img.style.top = parseInt(img.style.top) + 5 + "px"
+        console.log(img.style.left)
+        console.log(img.style.top)
+        console.log(window.innerWidth)
+        console.log(window.innerHeight)
+    }
+
+    function moveSelection(e) {
+        // e: đại diện cho sự kiện diễn ra trước đó
+        // theo bài này thì sẽ là sự kiện keydown
+        // e.keyCode: trả về mã keyCode của phím vừa được bấm
+        // tra mã keyCode: sử dụng https://www.toptal.com/developers/keycode
+        switch (e.keyCode) {
+            case 37:
+            case 65:
+                moveLeft();
+                break;
+            case 38:
+            case 87:
+                moveTop();
+                break;
+            case 39:
+            case 68:
+                moveRight();
+                break;
+            case 40:
+            case 83:
+                moveBottom();
+                break;
+        }
+    }
+
+    function init() {
+        // window: cửa sổ trình duyệt, thân của HTML
+        // addEventListener(): hàm dùng để lắng nghe sự kiện xảy ra trên máy tính của mn
+        // keydown: là sự kiện được xảy ra khi bấm 1 phím trên laptop
+        // moveSelection: hàm thực thi khi sự kiện bên trái xảy ra
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</html>
