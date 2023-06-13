@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
+<script>
+  //break: kết thúc vòng lặp gần nhất với nó
+  //continue: kết thúc bước lặp hiện tại, nhảy sang bước lặp tiếp theo
+  for (let k = 0; k < 5; k++) {
+    if (k === 3) {
+      break
+    }
+    console.log("Break: " + k)
+  }
+
+  for (let k = 0; k < 5; ++k) {
+    if (k === 3) {
+      continue
+    }
+    console.log("Continue: " + k)
+  }
+</script>
 </html>

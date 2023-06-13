@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="result"></div>
 </body>
+<script>
+
+    for (let h = 0; h < 5; h++) {
+        console.log(h)
+    }
+
+    for (let i = 0; i < 5; i++) {
+        console.log("----------")
+        for (let j = 0; j < 5; j++) {
+            console.log(i + "; " + j)
+        }
+    }
+
+    let data = ""
+    data += "<table border='1' style='width: 500px'>"
+    for (let i = 1; i < 11; i++) {
+        data +="<tr>"
+        for (let j = 1; j < 6; j++) {
+            data += "<td>"
+            data += (j * i)
+            data += "</td>"
+
+            //data += "<td>" + (j * i) + "</td>"
+        }
+        data += "</tr>"
+    }
+    data += "</table>"
+    document.getElementById("result").innerHTML = data
+    console.log(data)
+</script>
 </html>
