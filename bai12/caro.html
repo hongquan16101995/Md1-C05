@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = []
+    for (let i = 0; i < 5; i++) {
+        arr[i] = []
+        for (let j = 0; j < 5; j++) {
+            arr[i][j] = 0
+        }
+    }
+    console.log(arr)
+
+    let data = ""
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            data += arr[i][j] + "&ensp;&ensp;"
+        }
+        data += "<br>"
+    }
+    document.write(data)
+</script>
+</html>

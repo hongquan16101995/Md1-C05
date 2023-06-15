@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [1,2,3]
+
+    let arr1 = new Array(5)
+
+    let arr2 = new Array(1,2,3)
+
+    let arr3 = new Array("a", 1, "c")
+
+    console.log(arr2[1])
+    console.log(arr3[2])
+
+    let array = [5,4,3,2,1]
+    //1 mảng được khai báo
+    //trong mảng: phần tử, độ dài, chỉ số phần tử
+    //phần tử: định danh của các giá trị có trong mảng
+    //chỉ số: định danh cho vị trí của các phần tử => được gọi là index,
+            //giá trị index sẽ chạy từ 0 -> length - 1
+    //độ dài: số lượng các phần tử trong mảng => được gọi là length,
+            //length là 1 thuộc tính của đối tượng Array
+    //lưu ý: chỉ số sẽ bắt đầu từ số 0
+    //theo ví dụ: mảng array có: độ dài = 5
+    //chỉ số: giá trị 5 <=> chỉ số 0, gtri 4 <=> chỉ số 1,..., giá trị 1 <=> chỉ số 4
+
+    //mảng trong JS có thể chứa mọi kiểu dữ liệu mà nó có
+    //mảng trong JS không có giới hạn về độ dài khi thêm phần tử
+    let array1 = [10, "abc", true, null, undefined]
+    let arr_b = new Array(3)
+    arr_b[0] = 100
+    arr_b[1] = 200
+    arr_b[2] = 300
+    console.log(arr_b)
+
+    //truy xuất phần tử: dựa vào chỉ số phần tử, lấy ra giá trị phần tử để sử dụng
+    //cú pháp: tên mảng [chỉ số]
+    alert(array1[1])
+    //duyệt mảng: đi từ đầu đến cuối mảng để kiểm tra các phần tử của mảng
+    //sử dụng vòng lặp, bắt đầu từ 0 kết thúc ở length - 1, với bước lặp 1 đơn vị
+    for (let i = 0; i < array1.length; i++) {
+        console.log(array1[i])
+    }
+    //array.length: cách để gọi đến 1 thuộc tính có sẵn của đối tượng
+    //cú pháp: tên đối tượng . tên thuộc tính ; tên đối tượng . tên phương thức ()
+</script>
+</html>
