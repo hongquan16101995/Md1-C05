@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [1,2,3,4]
+    //push - pop
+    arr.pop()
+    console.log("After pop: " + arr)
+    arr.push(100)
+    console.log("After push: " + arr)
+    console.log("--------------")
+    //shift - unshift
+    arr.shift()
+    console.log("After shift: " + arr)
+    arr.unshift(1000)
+    console.log("After unshift: " + arr)
+    console.log("--------------")
+    //reverse: đảo ngược mảng
+    let arr1 = [1,2,3,4,5]
+    console.log("Before reverse: " + arr1)
+    arr1.reverse()
+    console.log("After reverse: " + arr1)
+    console.log("--------------")
+    //concat: nối mảng
+    let arrayA = [1,2,3]
+    let arrayB = [10,20,30]
+    console.log("Before concat: " + arrayA)
+    console.log("Before concat: " + arrayB)
+    let arrConcat = arrayA.concat(arrayB)
+    console.log("Kết quả concat: " + arrayA.concat(arrayB))
+    console.log("Concat: " + arrConcat)
+    console.log("After concat: " + arrayA)
+    console.log("After concat: " + arrayB)
+    console.log("--------------")
+    //indexOf: trả về vị trí phần tử nếu có
+    //phần tử không có thì trả về -1
+    let arr2 = [10,20,30,40,50,40]
+    console.log("Index of: " + arr2.indexOf(40))
+    console.log("Index of: " + arr2.indexOf(100))
+    console.log("Last index of: " + arr2.lastIndexOf(40))
+    console.log("Last index of: " + arr2.lastIndexOf(100))
+    console.log("--------------")
+    //slice: cắt mảng, không thay đổi mảng gốc
+    //nhận 2 tham số: đại diện cho index muốn tác động
+    //tham số đầu tiên: chỉ định vị trí bắt đầu cắt
+    //tham số thứ 2: chỉ định vị trí kết thúc cắt + 1
+    //kết quả: trả về 1 mảng mới
+    let arr3 = ["Orange", "Lemon", "Banana", "Mango", "Apple"]
+    console.log("Slice: " + arr3.slice(2,4))
+    let newArr = arr3.slice(1,4)
+    console.log("New array by slice: " + newArr)
+    console.log(newArr)
+    console.log("Arr gốc: " + arr3)
+    console.log("--------------")
+    //splice: cắt mảng, thay đổi mảng gốc
+    //nhận 2 tham số: đại diện cho index và số lượng phần tử muốn tác động
+    //tham số đầu tiên: chỉ định vị trí bắt đầu cắt
+    //tham số thứ 2: số lượng phần tử được cắt đi
+    //kết quả: trả về 1 mảng mới
+    let arr4 = ["Orange", "Lemon", "Banana", "Mango", "Apple"]
+    console.log(arr4)
+    let newArr1 = arr4.splice(2,2)
+    console.log("New array by splice: " + newArr1)
+    console.log(newArr1)
+    console.log("Arr gốc: " + arr4)
+    console.log(arr4)
+    console.log("--------------")
+    //splice 3 tham số: tham số thứ 3 là phần tử thêm mới nếu có
+    //tham số thứ 3: có thể là 1 phần tử hoặc 1 mảng khác
+    let arr5 = [5,4,3]
+    //cắt bỏ số, thay vào vị trí đó 2 giá trị là 100, 200
+    arr5.splice(1,1,100,200,300)
+    console.log(arr5)
+    let arr6 = [5,4,3]
+    arr6[1] = 100
+    arr6[3] = arr6[2]
+    arr6[2] = 200
+    console.log(arr6)
+    //sort: sắp xếp mảng số
+    let arr7 = [4,8,1,6,7,2]
+    arr7.sort((a,b) => {return a - b})
+    //arr7.sort((a,b) => {return b - a})
+    console.log(arr7)
+    //join: hợp các phần tử thành chuỗi, theo cú pháp chỉ định
+    let a = [4,5,6,7]
+    console.log(a.join(";"))
+</script>
+</html>

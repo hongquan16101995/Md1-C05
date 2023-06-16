@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label><input type="text" id="input"></label>
+<button onclick="checkData()">Click</button>
+</body>
+<script>
+    function checkData() {
+        let value = +document.getElementById("input").value
+        //isNaN( data ): trả v giá trị boolean;
+        //nếu là số thì trả về false; nếu không là số thì trả về true
+        //typeof: trả về kiểu dữ liệu của biến ở thời điểm xét
+        //typeof true = boolean
+        //typeof null = null
+        //let a
+        //typeof a = undefined
+        if (typeof value === "number") {
+            alert("True")
+        } else {
+            alert("False")
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function myUnshift(value) {
+        let arr = [1, 2, 3]
+        for (let i = arr.length; i > 0; i--) {
+            arr[i] = arr[i - 1]
+        }
+        arr[0] = value
+        console.log(arr)
+    }
+    myUnshift(+prompt("Nhập:"))
+
+    let a = [1,2,3]
+    a[a.length] = +prompt("Nhập")
+    console.log(a)
+</script>
+</html>
