@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //hàm không tham số, không giá trị trả về
+    function m1() {
+        let a = prompt("Nhập: ")
+        alert(a)
+    }
+    // m1()
+
+    //hàm có tham số, không có giá trị trả về
+    function m2(value) {
+        alert(value)
+    }
+    // let b = prompt("Nhập: ")
+    // m2(b)
+
+    //hàm nhiều tham số
+    //số lượng tham số của hàm là không giới hàm, thường không quá 10 tham số
+    function m2_1(value_1, value_2) {
+        alert(value_1 + value_2)
+    }
+    // let v1 = +prompt("Nhập v1: ")
+    // let v2 = +prompt("Nhập v2: ")
+    // m2_1(v1, v2)
+
+    //hàm có tham số, có giá trị trả về
+    function m3(value) {
+        let data = value * 3
+        return data
+    }
+    //hàm m3 có tham số là value, tham số là parameter
+        // value được coi là biến trong hàm, sử dụng tính chất như 1 biến
+        // đối số của m3 trong bài này là v. đối số là argument
+        // v là giá trị cụ thể truyền vào hàm m3, thay vào chỗ tham số value trong hàm
+    // let v = +prompt("Nhập: ")
+    // let result = m3(v)
+    // alert(result)
+
+    //hàm không tham số, có giá trị trả về
+    function m4() {
+        let a = 10
+        let b = 20
+        return a * b
+    }
+    let result1 = m4()
+    alert(result1)
+</script>
+</html>

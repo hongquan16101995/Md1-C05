@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //luyện tập 2 - 4
+    function m2_4() {
+        let string = prompt("Nhập vào 1 chuỗi: ")
+        let arr = string.split(" ")
+        let flag = true
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === "") {
+                flag = false
+                console.log("Chuỗi không chính xác!")
+                break
+            }
+        }
+        if (flag) {
+            console.log(arr)
+            console.log(string)
+            console.log(arr.length)
+        }
+
+    }
+    m2_4()
+</script>
+</html>

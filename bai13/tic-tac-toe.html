@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, tr, td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 25px;
+        }
+     </style>
+</head>
+<body>
+<div id="ca_ro"></div>
+<br>
+<button onclick="createBroad()">Start</button>
+<button onclick="restart()">Reset</button>
+</body>
+<script>
+
+    function createBroad() {
+        let x = +prompt("Nhập độ rộng bảng chơi: ")
+        let y = +prompt("Nhập độ dài bảng chơi: ")
+        drawBoardGame(x, y)
+    }
+    function drawBoardGame(x, y) {
+        let data = "<table>"
+        let arr = new Array(x)
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = new Array(y)
+            data += "<tr>"
+            for (let j = 0; j < arr[i].length; j++) {
+                data += "<td id='" + i + "-" + j + "' onclick='changeValue(this)'></td>"
+            }
+            data += "</tr>"
+        }
+        data += "</table>"
+        document.getElementById("ca_ro").innerHTML = data
+    }
+
+    let value = "o"
+
+    function changeValue(element) {
+        if (element.innerHTML === "") {
+            document.getElementById(element.id).innerHTML = value
+            checkValue()
+        }
+        if (element.innerHTML === "x") {
+            document.getElementById(element.id).style.color = "blue"
+        } else {
+            document.getElementById(element.id).style.color = "red"
+        }
+    }
+
+    function checkValue() {
+        if (value === "x") {
+            value = "o"
+        } else {
+            value = "x"
+        }
+    }
+
+    function restart() {
+        value = "o"
+        document.getElementById("ca_ro").innerHTML = ""
+    }
+</script>
+</html>
