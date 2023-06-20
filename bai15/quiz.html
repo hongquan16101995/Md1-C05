@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let array = new Array(1,2,4,6,7)
+    function Run(value, index) {
+        for (let i = array.length; i > index; i--) {
+            array[i] = array[i - 1]
+        }
+        console.log(array)
+        array[index] = value
+    }
+    Run(20, 2)
+    console.log(array)
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function run(num) {
+        let flag;
+        if (num < 2) {
+            flag = false
+        }
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                flag =  false
+            }
+        }
+        flag = true
+        return flag
+    }
+
+    console.log()
+</script>
+</html>

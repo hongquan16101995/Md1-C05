@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let data = ""
+
+    function checkValue(value) {
+        if (value === 1) {
+            value = "Hello"
+        }
+    }
+
+    checkValue(data)
+    console.log(data)
+
+    let data1 = ""
+
+    function checkValue1(value) {
+        if (value === 1) {
+            data1 = "Hello"
+        }
+    }
+
+    checkValue1(1)
+    console.log(data1)
+
+    //câu 5 - quiz
+    let eng = ["hello", "apple"]
+    let vn = ["xin chào", "táo", "chuối"]
+    let ketqua = ""
+
+    function translate(x) {
+        for (let i = 0; i < eng.length; i++) {
+            if (eng[i] === x) {
+                ketqua = vn[i]
+            }
+        }
+    }
+
+    translate("apple")
+    console.log(ketqua)
+</script>
+</html>

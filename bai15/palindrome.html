@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // let string = prompt("Nhập: ")
+    // isPalindrome(string)
+
+    function isPalindrome(s) {
+        let arr = s.split("")
+        let flag = true
+        for (let i = 0; i < arr.length/2; i++) {
+            if (arr[i] !== arr[arr.length - i - 1]) {
+                flag = false
+                break
+            }
+        }
+
+        // let fisrt = 0
+        // let last = arr.length - 1
+        // while (fisrt < last) {
+        //     if (arr[fisrt] !== arr[last]) {
+        //         flag = false
+        //         break
+        //     }
+        //     fisrt++
+        //     last--
+        // }
+
+        if (flag) {
+            alert(s + " là 1 chuỗi đối xứng!")
+        } else {
+            alert(s + " không là chuỗi đối xứng!")
+        }
+    }
+
+    //hàm đệ quy: trong thân hàm có gọi đến chính nó
+    //hàm đệ quy thường sẽ có tham số; hàm được gọi trong thân thì sẽ sử dụng 1 đối số khác hàm ban đầu
+    //khi gọi đệ quy, đối số của hàm sẽ thay đổi theo từng lần gọi
+
+    //ví du đệ quy cho giải thuật tính giai thừa
+    // 5! = 1*2*3*4*5
+    function giaiThua(number) {
+        if (number === 2) {
+            return number
+        } else {
+            return giaiThua(numbexr - 1) * number
+        }
+    }
+
+    console.log(giaiThua(6))
+</script>
+</html>
