@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //khai báo lớp trong JS dùng từ khóa class: ES6
+    class Student {
+        name
+        age
+        gender
+
+        //hàm khởi tạo constructor: gọi khi khai báo đối tượng với từ khóa new
+        constructor(name, age, gender) {
+            this.name = name
+            this.age = age
+            this.gender = gender
+        }
+
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        goToSchool() {
+            console.log(this.name + " đang đi học!")
+        }
+    }
+
+    let s1 = new Student("Long", 21, "Male")
+    console.log(s1.getName())
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //khai báo lớp trong JS dùng từ khóa function: ES5
+    //Student: tên đại diện của lớp
+    //các tham số sẽ là biến chứa giá trị cụ thể khi khai báo đối tượng
+    //dùng để truyền giá trị cho thuộc tính khi khai báo
+    function Student(name_param, age_param, gender_param) {
+        //this.name là thuộc tính của lớp Student
+        //name_param là giá trị truyền vào khi khai báo đối tượng
+        this.name = name_param
+        this.age = age_param
+        this.gender = gender_param
+
+        //this.getName là phương thức của lớp Student
+        //phương thức này trả về giá trị của thuộc tính name tại thời điểm gọi
+        this.getName = function () {
+            return this.name
+        }
+
+        this.setName = function (name) {
+            this.name = name
+        }
+
+        this.goToSchool = function () {
+            console.log(this.name + " đang đi học!")
+        }
+    }
+
+    //khai báo đối tượng từ lớp Student
+    //từ khóa new dùng để tạo mới 1 đối tượng từ lớp chỉ định
+    //tên lớp được gắn kèm sau từ khóa new
+    //() chứa các giá trị truyền vào cho các thuộc tính
+    let student1 = new Student("Chiến", 20, "Male")
+    //truy xuất thuộc tính: tên đối tượng . tên thuộc tính
+    console.log(student1.name)
+    //truy xuất phương thức: tên đối tượng . tên
+    //phương thức gân giống như cấu trúc hàm
+    console.log(student1.getName())
+    student1.goToSchool()
+    console.log(student1)
+    student1.setName("Tài")
+    student1.goToSchool()
+    console.log(student1)
+
+    let student2 = new Student("Tài", 20, "Male")
+</script>
+</html>

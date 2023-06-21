@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //chương trình quản lý 20 sản phẩm, mỗi sản phẩm đều có tên, giá, số lượng
+    let arrName = new Array(20)
+    arrName.push("Iphone")
+    let arrPrice = new Array(20)
+    arrPrice.push(15000000)
+    let arrQuantity = new Array(20)
+    arrPrice.push(10)
+
+    //oop
+    let arrProduct = new Array(20)
+    function Product(name, price, quantity) {
+        this.name = name
+        this.price = price
+        this.quantity = quantity
+
+        this.setName = function (name) {
+            this.name = name
+        }
+    }
+    let p1 = new Product("Bimbim", 10000, 1000)
+    arrProduct[0] = p1
+    console.log(arrProduct)
+    arrProduct[0].setName("Bimbim oshi")
+    arrProduct[0].price = 15000
+    console.log(arrProduct[0].name)
+    console.log(arrProduct[0].price)
+</script>
+</html>
