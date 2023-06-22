@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Temperature {
+        doC
+        doK
+        doF
+
+        constructor(doC) {
+            this.doC = doC
+        }
+
+        calKelvin() {
+            this.doK = this.doC + 273
+        }
+
+        getKelvin() {
+            return this.doK
+        }
+
+        calFahrenheit() {
+            this.doF = this.doC * (9/5) + 32
+        }
+
+        getFahrenheit() {
+            return this.doF
+        }
+    }
+
+    let temp = new Temperature(25)
+    temp.calKelvin()
+    temp.calFahrenheit()
+    console.log("Độ C sang độ K là: " + temp.getKelvin())
+    console.log("Độ C sang độ F là: " + temp.getFahrenheit())
+    console.log("Độ C sang độ K là: " + temp.doK)
+    console.log("Độ C sang độ F là: " + temp.doF)
+</script>
+</html>

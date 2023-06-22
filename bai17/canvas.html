@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="image" src="default.jpg"
+     style="border: 1px solid" height="100" width="100"/>
+<br>
+<canvas id="canvas" style="border: 1px solid" width="800" height="500"></canvas>
+<br>
+<button onclick="down()">MoveDown</button>
+<button onclick="right()">MoveRight</button>
+<button onclick="cheoDuoi()">Cheo</button>
+<button onclick="test()">DrawImage</button>
+<button onclick="drawBrick()">DrawBrick</button>
+<button onclick="changeImg()">ChangeImage</button>
+</body>
+<script>
+    let canvas = document.getElementById("canvas").getContext("2d")
+    // canvas.fillStyle = "red"
+    // canvas.fillRect(100, 100, 200, 120)
+    // canvas.fillStyle = "blue"
+    // canvas.fillRect(100, 250, 200, 120)
+    // canvas.fillStyle = "yellow"
+    // canvas.arc(450, 300, 80, 0, Math.PI * 2)
+    // canvas.fill()
+    function test() {
+        let img = document.getElementById("image")
+        canvas.drawImage(img, 100, 100, 100, 100)
+    }
+
+    function changeImg() {
+        let img = document.getElementById("image")
+        img.src = "drink1.jpg"
+    }
+
+    class Rectangle {
+        x
+        y
+        width
+        height
+
+        constructor(x, y, width, height) {
+            this.x = x
+            this.y = y
+            this.width = width
+            this.height = height
+        }
+
+        moveDown() {
+            this.y = this.y + 5
+        }
+
+        moveRight() {
+            this.x = this.x + 5
+        }
+
+        setWidth(width) {
+            this.width = width
+        }
+
+        draw(canvas) {
+            canvas.fillStyle = "red"
+            canvas.fillRect(this.x, this.y, this.width, this.height)
+        }
+    }
+
+    let rec = new Rectangle(100, 20, 200, 120)
+
+    function drawBrick() {
+        let arr = []
+        for (let i = 1; i < 6; i++) {
+            let data = 100
+            arr.push(new Rectangle(data * i, 20, 80,50))
+        }
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].draw(canvas)
+        }
+    }
+
+    function down() {
+        canvas.clearRect(0,0,800,500)
+        rec.moveDown()
+        console.log(rec.y)
+        rec.draw(canvas)
+    }
+
+    function right() {
+        canvas.clearRect(0,0,800,500)
+        rec.moveRight()
+        console.log(rec.x)
+        rec.draw(canvas)
+    }
+
+    function cheoDuoi() {
+        canvas.clearRect(0,0,800,500)
+        rec.moveRight()
+        rec.moveDown()
+        console.log(rec.x)
+        console.log(rec.y)
+        rec.draw(canvas)
+    }
+</script>
+</html>

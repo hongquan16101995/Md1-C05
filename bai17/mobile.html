@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Mobile {
+        name
+        battery
+        status
+        message
+        messageSend
+        messageReceive
+
+        constructor(name, message, messageSend, messageReceive) {
+            this.battery = 100
+            this.status = true
+            this.name = name
+            this.message = message
+            this.messageSend = messageSend
+            this.messageReceive = messageReceive
+        }
+
+        onOff() {
+            if (this.battery > 0) {
+                this.status = !this.status
+            } else {
+                console.log("Hãy sạc pin điện thoại trước!")
+            }
+        }
+
+        creaseBattery() {
+            this.battery = 100
+        }
+
+        checkOnOff() {
+            if (this.status) {
+                console.log(this.name + " đang bật!")
+            } else {
+                console.log(this.name + " đang tắt!")
+            }
+        }
+
+        decreaseBattery() {
+            this.battery = this.battery - 1
+            if (this.battery === 0) {
+                this.status = false
+            }
+        }
+
+        writeMessage(string) {
+            if (this.status) {
+                this.message.push(string)
+                this.decreaseBattery()
+            } else {
+                console.log("Hãy bật điện thoại " + this.name + " trước!")
+            }
+        }
+
+        sendMessage(mobile) {
+            if (this.status && mobile.status) {
+                this.messageSend = this.messageSend.concat(this.message)
+                mobile.messageReceive = mobile.messageReceive.concat(this.message)
+                this.message = []
+                this.decreaseBattery()
+            } else {
+                console.log("Hãy bật điện thoại " + this.name + " trước!")
+            }
+        }
+
+        sendMultiMessage(mobile1, mobile2, mobile3) {
+            if (this.status && mobile1.status && mobile2.status && mobile3.status) {
+                this.messageSend = this.messageSend.concat(this.message)
+                mobile1.messageReceive = mobile1.messageReceive.concat(this.message)
+                mobile2.messageReceive = mobile2.messageReceive.concat(this.message)
+                mobile3.messageReceive = mobile3.messageReceive.concat(this.message)
+                this.message = []
+                this.decreaseBattery()
+            } else {
+                console.log("Hãy bật điện thoại " + this.name + " trước!")
+            }
+        }
+
+        sendMultiMessage1(mobile) {
+            if (this.status) {
+                for (let i = 0; i < mobile.length; i++) {
+                    if (mobile[i].status) {
+                        this.messageSend = this.messageSend.concat(this.message)
+                        mobile[i].messageReceive = mobile[i].messageReceive.concat(this.message)
+                    }
+                }
+                this.message = []
+                this.decreaseBattery()
+            } else {
+                console.log("Hãy bật điện thoại " + this.name + " trước!")
+            }
+        }
+
+        seenMessageReceive() {
+            if (this.status) {
+                console.log("Tin nhắn đã nhận: ")
+                console.log(this.messageReceive)
+                this.decreaseBattery()
+            } else {
+                console.log("Hãy bật điện thoại " + this.name + " trước!")
+            }
+        }
+
+        seenMessageSend() {
+            if (this.status) {
+                console.log("Tin nhắn đã gửi: ")
+                console.log(this.messageSend)
+                this.decreaseBattery()
+            } else {
+                console.log("Hãy bật điện thoại " + this.name + " trước!")
+            }
+        }
+    }
+
+    let nokia = new Mobile("Nokia", [], [] ,[])
+    let iphone = new Mobile("Iphone", [], [] ,[])
+    let samsung = new Mobile("Samsung", [], [] ,[])
+    let xiaomi = new Mobile("Xiaomi", [], [] ,[])
+    let arrMobile = [iphone, samsung, xiaomi]
+</script>
+</html>
